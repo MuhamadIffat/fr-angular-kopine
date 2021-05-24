@@ -1,0 +1,47 @@
+<div class="container-fluid ecom-breadcrumb-wrapper">
+    <div class="container">
+       <div class="row">
+         <div class="col-lg-12">
+           <span class="ecom-breadcrumb-home" routerLink="/home">Home</span>
+           <span class="ecom-breadcrumb-separator">/</span>
+           <span class="ecom-breadcrumb-home" routerLink="/admin">Admin</span>
+           <span class="ecom-breadcrumb-separator">/</span>
+           <span class="ecom-breadcrumb-page">{{pageName}}</span>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="container panel panel-primary">
+       <div class="panel-heading">
+          <h2>Laporan Penjualan</h2>
+          <a class="btn btn-primary mb-3" (click)="exporToExcel()">Ekspor Excel <span class="sr-only">(current)</span></a>
+          <form class="form-inline my-2 my-lg-0">
+             <input type="search" name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search employees..." required>
+          </form>
+       </div>
+       <div class="container" id="main-container">
+          <div class="panel-body mt-3">
+             <table class="table table-bordered border-primary">
+                <thead>
+                   <tr>
+                      <th>No</th>
+                      <th>Order ID</th>
+                      <th>Jenis Pembayaran</th>
+                      <th>Alamat</th>
+                      <th>User ID</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr *ngFor="let order of orders">
+                      <td>{{order.id}}</td>
+                      <td>{{order.order_id}}</td>
+                      <td>{{order.payment_type}}</td>
+                      <td>{{order.delivery_address}}</td>
+                      <td>{{order.user_id}}</td>
+                      <div>
+                   </div>
+                   </tr>
+                </tbody>
+             </table>
+          </div>
+       </div>

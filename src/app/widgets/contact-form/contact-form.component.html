@@ -1,0 +1,42 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactFormArray,storedData)">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail">Email *</label>
+        <input type="email" class="form-control" name="inputEmail" formControlName="inputEmail" placeholder="Email" required="required">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputName">Nomor *</label>
+        <input type="text" class="form-control" name="inputName" formControlName="inputName" placeholder="Nomor" required="required">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">Alamat</label>
+      <input type="text" class="form-control" name="inputAddress" formControlName="inputAddress" placeholder="Alamat">
+    </div>
+    <div class="form-group">
+      <label for="inputAddress2">Alamat Lengkap</label>
+      <input type="text" class="form-control" name="inputAddress2" formControlName="inputAddress2" placeholder="Alamat Lengkap">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">Kota</label>
+        <input type="text" class="form-control" name="inputCity" formControlName="inputCity" placeholder="Nama Kota">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Kode Pos</label>
+        <input type="text" class="form-control" name="inputZip" formControlName="inputZip" placeholder = "75008">
+      </div>
+      <div class="form-group col-md-12">
+        <div class="form-group col-md-5 ecom-title-wrapper">
+          <label for="inputZip">Nama Produk</label>
+            <input type="text" class="form-control" name="inputTitle" formControlName="inputTitle" placeholder = "Kode Pos">
+        </div>
+        <label for="inputTxt">Pesan *</label>
+        <textarea rows="10" class="form-control" name="inputTxt" formControlName="inputTxt" placeholder="Pesan" required="required">
+      </textarea>
+    </div>
+    </div>
+  
+    <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">Kirim</button>
+  
+  </form>

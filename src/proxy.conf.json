@@ -1,0 +1,7 @@
+{
+    "/api/*":{
+        "target":"https://spring-kopi.herokuapp.com/",
+        "secure":false,
+        "loglevel":"debug"
+    }
+}

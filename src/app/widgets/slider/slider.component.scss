@@ -1,0 +1,157 @@
+@import '../../variables';
+
+.ecom-slider-container{
+    font-family:$main-font;
+    padding:0px;
+    .ecom-slider-row{
+        background-image: url('../../../assets/img/kopinejuli.jpg');
+        background-size: cover;
+        background-repeat:no-repeat;
+        background-position: center;
+    }
+    .ecom-slider-row,.ecom-slider-row-sec{
+        display:block;
+        .ecom-slider-second-title{
+            padding-left:15px;
+            h4{
+                color:$txt-sec-color;
+                font-weight: bold;
+            }
+        }
+        .ecom-slider-main-title{
+            padding-left:15px;
+        }
+        .ecom-slider-btn-cont{
+            padding-left:15px;
+            a.ecom-home-featured-add-cart{
+                color:$txt-first-color!important;
+                background-color: $main-bg-color;
+                border-color: $txt-sec-color!important;
+                span.ecom-home-add-to-cart-icon{
+                    font-size: 1rem;
+                    color:$txt-first-color!important;
+                    background-color: $main-bg-color;
+                    border-color: $txt-sec-color!important;
+                    .material-icons{
+                        float:left!important;
+                        margin-right:15px;
+                        font-size:1.2rem;
+                        color:$txt-first-color;
+                        line-height:28.4px;
+                        vertical-align: middle;
+
+                    }
+                }
+            }
+            a.ecom-home-featured-add-cart:hover{
+                cursor:pointer;
+                background-color: $secondary-bg-color;
+                border-color: $sec-color!important;
+            }
+        }
+    }
+    .ecom-slider-row-sec{
+        background-image: url('../../../assets/img/kopine1.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+    .ecom-slider-nav-wrapper{
+        margin:auto;
+        width:50%;
+        position:relative!important;
+        z-index:1000!important;
+        top:-60px;
+        .ecom-slider-btn{
+            width:50%; 
+            margin-left:auto;
+            margin-right:auto;
+            text-align: center;
+            .ecom-slider-btn-wrapper{
+                display: inline-block;
+                i{  
+                    text-align: center;
+                    font-size:2.5em;
+                    color:$sec-color;
+                    background-color: $white-bg;
+                    border-radius:50%;
+                }
+                i:hover{
+                    cursor:pointer;
+                    color:$txt-first-color;
+                    background-color:$main-bg-color;
+                }
+            }
+        }
+    }
+
+}
+
+/************
+Responsive
+************/
+@media (min-width:320px) and (max-width:991px){
+    .ecom-slider-row,.ecom-slider-row-sec,{
+        height:385px;
+        .ecom-slider-second-title{
+            width:100%;
+            padding-top:5%;
+        }
+        .ecom-slider-main-title{
+            width:100%;
+            padding-top:5%;
+        }
+        .ecom-slider-btn-cont{
+            padding-top:10%;
+        }
+    }
+}
+@media (min-width:992px) and (max-width:1199px){
+    .ecom-slider-row,.ecom-slider-row-sec{
+        height:485px;
+        .ecom-slider-second-title{
+            width:100%;
+            padding-top:5%;
+        }
+        .ecom-slider-main-title{
+            width:100%;
+            padding-top:5%;
+        }
+        .ecom-slider-btn-cont{
+            padding-top:10%;
+        }
+    }
+}
+@media (min-width:1200px) and (max-width:1600px){
+    .ecom-slider-row,.ecom-slider-row-sec{
+        height:485px;
+        .ecom-slider-second-title{
+            width:100%;
+            padding-top:5%;
+        }
+        .ecom-slider-main-title{
+            width:100%;
+            padding-top:5%;
+        }
+        .ecom-slider-btn-cont{
+            padding-top:10%;
+        }
+    }
+}
+@media (min-width:1601px){
+    .ecom-slider-row, .ecom-slider-row-sec{
+        height:485px;
+        .ecom-slider-second-title{
+            width:100%;
+            padding-top:10%;
+        }
+        .ecom-slider-main-title{
+            width:100%;
+            padding-top:2%;
+        }
+        .ecom-slider-btn-cont{
+            padding-top:5%;
+        }
+    }
+} 

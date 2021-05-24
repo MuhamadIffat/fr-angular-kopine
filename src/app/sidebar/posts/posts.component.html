@@ -1,0 +1,47 @@
+<div class="ecom-sidebar-posts-wrapper">
+    <h6>Notre actualité :</h6>
+    <div class="ecom-posts-nav-wrapper">
+      <div (click)="setPostStatus(firstRowStatus,secRowStatus);">
+        <i class="material-icons">keyboard_arrow_left</i>
+      </div>
+      <div (click)="setPostStatus(firstRowStatus,secRowStatus);">
+        <i class="material-icons">keyboard_arrow_right</i>
+      </div>
+    </div>
+    <div class="ecom-posts-item-wrapper" *ngIf ="firstRowStatus">
+      <div>
+        <figure>
+          <img src="{{secRowData.img}}" alt="">
+          <figcaption>
+  
+          </figcaption>
+  
+        </figure>
+        <span class="ecom-post-title">{{secRowData.title}}</span>
+        <br>
+        <span class="ecom-post-date"><strong>Publié le : </strong>{{secRowData.date}}</span>  
+      </div>
+      <p>
+        {{secRowData.txt}} 
+      </p>
+    </div>
+  
+    <div class="ecom-posts-item-wrapper" *ngIf ="secRowStatus">
+      <div>
+        <figure>
+          <img src="{{firstRowData.img}}" alt="">
+          <figcaption>
+  
+          </figcaption>
+  
+        </figure>
+        <span class="ecom-post-title">{{firstRowData.title}}</span>
+        <br>
+        <span class="ecom-post-date"><strong>Publié le : </strong> {{firstRowData.date}}</span>  
+      </div>
+      <p>
+        {{firstRowData.txt}}  
+      </p>
+    </div>
+  
+  </div>

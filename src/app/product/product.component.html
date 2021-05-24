@@ -1,0 +1,59 @@
+<!-- breadcrumb -->
+<app-breadcrumb [pageName]="page"></app-breadcrumb>
+<!-- breadcrumb -->
+<div class="container">
+    <!-- .row -->
+    <div class="row ecom-home-catalog-serach-row">
+      <div class="col-lg-4 col-lg-offset-8">
+        <div class="input-group mb-3">  
+  
+          <input type="search" class="form-control" placeholder ="Pencarian produk">
+  
+            <div class="input-group-append">
+              <span class="input-group-text">
+                <i class="material-icons">search</i>
+              </span>
+            </div>
+  
+            </div>
+        </div>
+      </div>
+      <!-- /.row -->
+    <!-- .ecom-home-catalog-row -->
+    
+    <div class="row ecom-home-catalog-row col-md-7 wthree_banner_bottom_right">
+      <!-- <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+        <ul id="myTab" class="nav nav-tabs" role="tablist">
+          <li *ngFor="let category of categoryList" role="presentation" >
+            <a (click)="getProductsByCateogy(category)" href="javascript:void(0)" id="home-tab" role="tab" data-toggle="tab" aria-controls="home">{{category.name}}</a>
+          </li>
+        </ul> -->
+      <!-- col-lg-4-->
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6" *ngFor="let data of  productsList">
+        <!-- .ecom-home-catalog-card -->
+        <div class="card ecom-home-catalog-card">
+            <figure>
+              <img class="card-img-top" src="assets/img/{{data.fileName}}" alt="{{data.filename}}">
+            </figure>
+            <h5><a href="#">{{data.filename}}</a></h5>
+            <div class="card-body">
+              <h5 class="card-title ecom-home-catalog-book-title">{{data.name}}</h5>
+              <p class="card-text ecom-home-catalog-book-price">
+                <span>Rp{{data.price}}</span>
+                <span></span>
+              </p>
+              <a class="btn btn-primary ecom-home-catalog-add-cart" (click)="addCart(data)">
+                <span class="ecom-responsive">Tambah Keranjang</span>
+                <span class="ecom-home-add-to-cart-icon">
+                    <i class="material-icons">add_shopping_cart</i>
+                </span>
+              </a><!-- todo verifier -->
+            </div>
+        </div>
+        <!-- /.ecom-home-catalog-card -->
+      </div>
+  
+    </div>
+    <!-- .ecom-home-catalog-row -->
+  </div>
+ 

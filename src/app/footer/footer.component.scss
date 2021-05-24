@@ -1,0 +1,40 @@
+@import "../variables";
+
+footer{
+    font-family: $main-font;
+    background-color: $secondary-bg-color;
+    h6{
+        font-size:1.2em!important;
+        color:$txt-sec-color!important;
+    }
+    margin-top:50px!important;
+    .ecom-footer{
+        min-height:300px;
+        padding-top:30px;
+        padding-bottom:30px;
+        background-color: $secondary-bg-color;
+        h6{color:$txt-sec-color;}
+        .ecom-footer-nav{
+            display:none;
+            .ecom-footer-nav-title{
+
+                color:$txt-sec-color!important;
+                font-size:1.2em!important;
+            }
+            a.ecom-footer-nav-item{
+                color:$txt-first-color!important;
+                text-decoration: none!important;
+            }
+        }
+    }
+     /**/
+     .ecom-no-padding{
+        padding-left:0px!important;
+        padding-right: 0px!important;
+    }
+    .ecom-footer-nav{
+        a{
+            display:block!important;
+        }
+    }
+}

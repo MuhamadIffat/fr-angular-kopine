@@ -1,0 +1,14 @@
+<div class="col-lg-12 ecom-newsletter-container">
+    <h6>Newsletter :</h6>
+    <form [formGroup]="newsletterForm" (ngSubmit)="onSubmit(newsletterFormArray)">
+      <input type="email" class="form-control" name="inputNewsletter" formControlName="inputNewsletter" placeholder="Inscrivez-vous à notre newsletter" required>
+      <button class="btn" type="submit">
+        <span>Valider</span>
+        <span class="ecom-newsletter-icon">
+          <i class="material-icons">
+            check
+          </i>
+        </span>
+      </button>
+    </form>
+  </div>

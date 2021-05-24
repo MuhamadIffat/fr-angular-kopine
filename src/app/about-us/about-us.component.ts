@@ -1,0 +1,18 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-about-us',
+  templateUrl: './about-us.component.html',
+  styleUrls: ['./about-us.component.scss']
+})
+export class AboutUsComponent implements OnInit {
+
+  page:string;
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.page = "about";
+  }
+
+}

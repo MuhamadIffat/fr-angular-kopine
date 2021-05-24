@@ -1,0 +1,159 @@
+
+<div class="container-fluid ecom-breadcrumb-wrapper">
+  <div class="container">
+     <div class="row">
+       <div class="col-lg-12">
+         <span class="ecom-breadcrumb-home" routerLink="/home">Home</span>
+         <span class="ecom-breadcrumb-separator">/</span>
+         <span class="ecom-breadcrumb-home" routerLink="/admin">Admin</span>
+         <span class="ecom-breadcrumb-separator">/</span>
+         <span class="ecom-breadcrumb-page">{{pageName}}</span>
+       </div>
+     </div>
+   </div>
+ </div>
+ <div class="container panel panel-primary">
+     <div class="panel-heading">
+        <h2>Daftar Produk</h2>
+        <a class="btn btn-primary mb-3" (click)="onOpenModal(null, 'add')">Tambah Produk <span class="sr-only">(current)</span></a>
+        <form class="form-inline my-2 my-lg-0">
+           <input type="search" name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search employees..." required>
+        </form>
+     </div>
+     <div class="container" id="main-container">
+        <div class="panel-body mt-3">
+           <table class="table table-bordered border-primary">
+              <thead>
+                 <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                 </tr>
+              </thead>
+              <tbody>
+                 <tr *ngFor="let employee of employees">
+                    <td>{{employee?.id}}</td>
+                    <td>{{employee?.name}}</td>
+                    <td>{{employee?.price}}</td>
+                    <div>
+                    <td>
+                       <button (click)="onOpenModal(employee, 'edit')" class="btn btn-danger">Edit</button>
+                       <button (click)="onOpenModal(employee, 'delete')" class="btn btn-info" style="margin-left: 10px">Delete</button>
+                    </td>
+                 </div>
+                 </tr>
+              </tbody>
+           </table>
+        </div>
+     </div>
+ 
+     <div class="modal fade" id="addProductsModal" tabindex="-1" role="dialog" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+           <div class="modal-content">
+              <div class="modal-header">
+                 <h5 class="modal-title" id="addProductsModalLabel">Add Employee</h5>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                 </button>
+              </div>
+              <div class="modal-body">
+                 <form [formGroup]="this.productService.dataForm" enctype="multipart/form-data" (ngSubmit)="onAddProducts()">
+                  <input type="hidden"  formControlName="id" id="id">
+                     <div class="form-group">
+                        <label for="name">Nama</label>
+                        <input type="text" formControlName="name" class="form-control" id="name" placeholder="Nama" required>
+                     </div>
+                    <div class="form-group">
+                        <label>Kategori </label>
+                        <select class="form-control" formControlName="id_category" id="id_category">
+                           <option value="0">-Select-</option>
+                           <option *ngFor="let item of categoryList" value="{{item.id}}">{{item.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                       <label for="phone">Harga</label>
+                       <input type="text" formControlName="price" class="form-control" id="price" placeholder="Harga" required>
+                    </div>
+                    <div class="form-group">
+                     <label for="phone">Stock</label>
+                     <input type="text" formControlName="stock" class="form-control" id="stock" placeholder="stock" required>
+                  </div>
+                  <div class="form-group">
+                     <label>File Upload  </label>
+                         <input type="file" accept="image/*" (change)="onSelectFile($event)">
+                         <img [src]="imgURL" height="200" *ngIf="imgURL">
+                 </div>
+                    <div class="modal-footer">
+                       <button type="button" id="add-products-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                       <button type="submit" class="btn btn-primary" >Save changes</button>
+                    </div>
+                 </form>
+              </div>
+           </div>
+        </div>
+     </div>
+ 
+ <!-- Edit Modal -->
+     <div class="modal fade" id="updateProductsModal" tabindex="-1" role="dialog" aria-labelledby="employeeEditModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+           <div class="modal-content">
+              <div class="modal-header">
+                 <h5 class="modal-title" id="updateProductsModalLabel">Edit Products {{editEmployee?.name}}</h5>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                 </button>
+              </div>
+              <div class="modal-body">
+                 <form [formGroup]="this.productService.dataForm" enctype="multipart/form-data" (ngSubmit)="updateData()">
+                  <input type="hidden"  formControlName="id" id="id">
+                  <div class="form-group">
+                     <label for="name">Nama</label>
+                     <input type="text" formControlName="name" class="form-control" id="name" placeholder="Nama" required>
+                  </div>
+                 <div class="form-group">
+                     <label>Kategori </label>
+                     <select class="form-control" formControlName="id_category" id="id_category">
+                        <option value="0">-Select-</option>
+                        <option *ngFor="let item of categoryList" value="{{item.id}}">{{item.name}}</option>
+                     </select>
+                 </div>
+                 <div class="form-group">
+                    <label for="phone">Harga</label>
+                    <input type="text" formControlName="price" class="form-control" id="price" placeholder="Harga" required>
+                 </div>
+                 <div class="form-group">
+                  <label for="phone">Stock</label>
+                  <input type="text" formControlName="stock" class="form-control" id="stock" placeholder="stock" required>
+               </div>
+                    <div class="modal-footer">
+                       <button type="button" id=""  data-dismiss="modal" class="btn btn-secondary">Close</button>
+                       <button type="submit"  class="btn btn-primary" >Save changes</button>
+                    </div>
+                 </form>
+              </div>
+           </div>
+        </div>
+     </div>
+ 
+ <!-- Delete Modal -->
+     <div class="modal fade" id="deleteProductsModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+           <div class="modal-content">
+              <div class="modal-header">
+                 <h5 class="modal-title" id="deleteModelLabel">Delete Employee</h5>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                 </button>
+              </div>
+              <div class="modal-body">
+                 <p>Are you sure you want to delete employee {{deleteEmployee?.name}}?</p>
+                 <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button (click)="onDeleteProducts(deleteEmployee?.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+ 
