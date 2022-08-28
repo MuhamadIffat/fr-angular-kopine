@@ -12,10 +12,10 @@ export class AppComponent implements OnInit{
   welcomeUsername = "";
 
   constructor(private http:HttpService) {
-    if(this.http.isLogin()){
-      this.isLogin = true;
-      this.welcomeUsername = this.http.getLoginDataByKey("name");
-    }
+    // if(this.http.isLogin()){
+    //   this.isLogin = true;
+    //   this.welcomeUsername = this.http.getLoginDataByKey("name");
+    // }
    }
 
   ngOnInit(){  } 
