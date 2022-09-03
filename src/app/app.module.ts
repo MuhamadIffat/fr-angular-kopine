@@ -50,6 +50,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { FormComponent } from './admin-panel/form/form.component';
 import { AdminPanelModule } from './admin-panel/admin-panel.module';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -88,8 +89,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     RegistrasiComponent,
     AdminPanelComponent,
     FormComponent,
-    CheckoutComponent,
-    
+    CheckoutComponent,    
   ],
   imports: [
     BrowserModule,
@@ -100,11 +100,11 @@ import { CheckoutComponent } from './checkout/checkout.component';
     BrowserAnimationsModule,
     WidgetsModule,
     CommonModule,
-    AdminPanelModule
-
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [ApiService,DataShareService,LocalStorageService],
+    AdminPanelModule,
+    AuthModule
+  ],  
+  // ApiService,DataShareService,LocalStorageService
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

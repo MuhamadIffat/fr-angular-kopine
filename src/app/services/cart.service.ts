@@ -12,7 +12,7 @@ export class CartService {
   cartObj = [];
   public cartTotalPrice :any;
   constructor(private http : HttpService) {
-    this.getCartDetailsByUser();
+    // this.getCartDetailsByUser();
    }
 
   getCartDetailsByUser(){
