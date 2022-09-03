@@ -1,5 +1,5 @@
 .login {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;    
@@ -32,7 +32,38 @@
 
             .button-wrapper {
                 margin-top: 14px;
+                .btn-action {
+                    background-color: #42BADE;
+                    color: white;
+                    padding: 8px 16px;
+                    border-radius: 6px;
+                    outline: none;
+                    border: none;
+                    text-transform: uppercase;
+                    display: block;
+                    width: 100%;
+                }
             }
         }
     }
+}
+
+.blue {
+    background-color: #42BADE;
+    height:100vh
+}
+
+.logo {    
+    font-weight: bold;
+    font-size: 24px;    
+    padding: 20px;
+    color: #42BADE;
+}
+
+.login-title {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 20px;
+    text-align: end;
+    color: #42BADE;
 }
